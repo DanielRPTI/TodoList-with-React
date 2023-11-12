@@ -1,0 +1,39 @@
+.tasks{
+  position: relative;
+  bottom: 4rem;
+}
+
+.insertTask {
+  padding: 0.75rem  ;
+  width: 606px;
+  margin-right: 0.5rem;
+  
+  color: var(--gray-300);
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  background: var(--gray-500);
+}
+
+.insertTask:focus {
+  color: var(--gray-100);
+}
+
+.btnCreateTask{
+  padding: 0.75rem;
+  color: var(--gray-100);
+
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue-dark);
+  cursor: pointer;
+  transition: background-color 0.1s; 
+}
+
+.btnCreateTask[type=submit]:not(:disabled):hover{
+  background: var(--blue);
+}
+.btnCreateTask:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+

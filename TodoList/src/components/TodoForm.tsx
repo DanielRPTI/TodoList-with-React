@@ -30,13 +30,14 @@ export function TodoForm ({addTodo}: TodoFormProps)  {
 //  }
   
   return (
-    <form className={styles.Tasks}>
+    <form className={styles.tasks}>
       <input 
+      className={styles.insertTask}
       type="text" 
       placeholder='Add a new todo'
       // value={text}
       />
-      <button type='submit'>Criar <PlusCircle/></button>
+      <button className={styles.btnCreateTask} type='submit'>Criar <PlusCircle/></button>
     </form>
   )
 }

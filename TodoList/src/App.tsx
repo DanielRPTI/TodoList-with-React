@@ -11,9 +11,8 @@ export function App() {
       <Header/>
       <div className={styles.wrapper}>
         <main>
-          <TodoForm />
+          <TodoForm/>
           <TodoList />
-
         </main>
       </div>
 
