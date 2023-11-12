@@ -12,25 +12,27 @@
 --gray-600: #1A1A1A;
 --gray-700: #0D0D0D;
 
---trash-delete: #E25858;
+--delete: #E25858;
 
 }
 /* Config Focus default */
-:focus{
+/* :focus{
   outline: transparent;
   box-shadow: 0 0 0 2px var(--purple-dark);
-}
+} */
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   background-color: var(--gray-600);
   color: var(--gray-300);
   -webkit-font-smoothing: antialiased;
+  
 }
 /* padroniza a font para todos as coisas da pagina inclusive os seguintes campos que não respeitam as fonts do body */
 body, input, textarea, button{
