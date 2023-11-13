@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-export function TodoForm ({addTodo}: any)  {
+export function TodoForm ({createNewTodo}: any)  {
   const [newTodoText, setNewTaskText] = useState('')
   const fieldIsEmpty = newTodoText.length === 0
   
@@ -19,9 +19,9 @@ export function TodoForm ({addTodo}: any)  {
     const newTodo = {
       id: uuidv4(),
       text: newTodoText,
-      isCompleted: false,
+      done: false,
     }
-    addTodo(newTodo)
+    createNewTodo(newTodo)
     setNewTaskText('')
   }
 
@@ -35,8 +35,9 @@ export function TodoForm ({addTodo}: any)  {
       name='addTodo'
       type="text" 
       placeholder='Add a new todo'
-      value={text}
       onChange={handleNewTaskChange}
+      value={newTodoText}
+
       />
       <button 
         disabled={fieldIsEmpty}
@@ -48,16 +49,3 @@ export function TodoForm ({addTodo}: any)  {
     </form>
   )
 }
-
-
-
-//   const [newTaskText, setNewTaskText] = useState('')
-
-
-//   function handleNewTaskChange (event: ChangeEvent<HTMLInputElement>) {
-//     event.target.setCustomValidity('')
-//     setNewTaskText(event.target.value)
-//   }
-//   function handleNewTaskInvalid (event: InvalidEvent<HTMLInputElement>) {
-//     event.target.setCustomValidity('Esse campo é obrigatorio!')
-//  }

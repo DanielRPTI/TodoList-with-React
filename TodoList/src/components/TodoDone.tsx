@@ -5,7 +5,7 @@ interface TodoProps{
 todo: {
   id: string;
   text:string;
-  isCompleted: boolean
+  done: boolean
 }
 onDeleteTodo: (id: string) => void;
 }

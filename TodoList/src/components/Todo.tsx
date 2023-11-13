@@ -1,32 +1,27 @@
 import { Circle, Trash } from 'phosphor-react';
-import styles from './TodoList.module.css'
+import styles from './Todo.module.css'
 
 interface TodoProps { 
   todos: { 
      id: string;
     text: string;
-    isCompleted: boolean};
+    done: boolean
+  };
   onDoneTodo: (id: string) => void;
-  onDeleteTask: (id: string) => void;
+  onDeleteTodo: (id: string) => void;
 }
 
-export function TodoList ({todos, onDoneTodo, onDeleteTask}: TodoProps ) {
+export function Todo ({todos, onDoneTodo, onDeleteTodo}: TodoProps ) {
 
-function handleDeleteTask () {
-   onDeleteTask(todos['id'])
+function handleDeleteTodo () {
+   onDeleteTodo(todos['id'])
  }
 function handleDoneTodo (){
   onDoneTodo(todos['id'])
 }
 
 return(
-  <div className={styles.containerHeader}>
-        <header>
-          <div className={styles.headerContent}>
-            <p className={styles.tasksCreate}>Tasks Create <span>{}</span></p>
-            <p className={styles.tasksCompleted}>Completed <span>2 de 5</span></p>
-          </div>
-        </header>
+  <div>
     <section className={styles.container}>
             <button 
               type='submit'
@@ -34,12 +29,13 @@ return(
               onClick={handleDoneTodo}
               >
               <Circle size={20}/>
+              <p>{todos['text']}</p>
             </button>
-            <p>{todos['text']}</p>
+
             <button
               type='submit'
               className={styles.deleteBtn}
-              onClick={handleDeleteTask}
+              onClick={handleDeleteTodo}
               >
              <Trash size={20}/>
             </button>
